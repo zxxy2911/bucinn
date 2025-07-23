@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOR MY LOVE NIPAA💞🌷</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Segoe UI', sans-serif;
+            background: black;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('https://i.ibb.co/hxgt8YQT/your-second-image.jpg') no-repeat center center/cover;
+            z-index: -2;
+            filter: blur(8px) brightness(0.4);
+        }
+
+        audio {
+            display: none;
+        }
+
+        .judul-cinta {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px;
+            color: #fff;
+            text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc;
+            font-family: 'Segoe UI', sans-serif;
+            z-index: 10;
+        }
+
+        .floating-text {
+            position: absolute;
+            color: #ffccff;
+            font-weight: bold;
+            white-space: nowrap;
+            text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc;
+            animation: floatText 12s linear infinite;
+            opacity: 0;
+            z-index: 9;
+        }
+
+        @keyframes floatText {
+            0% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(120vh);
+                opacity: 0;
+            }
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            clip-path: path('M10 30 C 10 10, 30 10, 30 30 C 30 50, 10 50, 10 30 Z');
+            animation: floatHeart 6s linear infinite;
+            opacity: 0.7;
+            z-index: 8;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+            }
+        }
+
+        .floating-photo {
+            position: absolute;
+            width: 22vw;
+            max-width: 130px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255,105,180,0.8);
+            animation: floatPhoto 35s ease-in-out infinite;
+            opacity: 0.9;
+            z-index: 7;
+            transition: all 0.5s ease;
+        }
+
+        @keyframes floatPhoto {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) translateX(20px) rotate(10deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Judul di Tengah -->
+    <h1 class="judul-cinta">FOR MY LOVE NIPAA💞🌷</h1>
+
+    <!-- Musik Cinta -->
+    <audio autoplay loop>
+        <source src="https://cdn.pixabay.com/download/audio/2023/03/20/audio_fa7d1b4ab6.mp3?filename=romantic-music-14363.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Teks Cinta Melayang
+        for (let i = 0; i < 30; i++) {
+            const text = document.createElement('div');
+            text.className = 'floating-text';
+            text.textContent = 'I LOVEE YOUU CANTIKUUU💞🌷';
+
+            const fontSize = (14 + Math.random() * 6);
+            const left = Math.random() * 90;
+            const topOffset = -Math.random() * 100;
+            const delay = Math.random() * 6;
+
+            text.style.fontSize = fontSize + 'px';
+            text.style.left = left + 'vw';
+            text.style.top = topOffset + 'vh';
+            text.style.animationDelay = delay + 's';
+
+            document.body.appendChild(text);
+        }
+
+        // Hati Melayang
+        for (let i = 0; i < 15; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+            document.body.appendChild(heart);
+        }
+
+        // Foto-Foto Bergulir
+        const photos = [
+            { url: 'https://freeimage.host/i/FO87mDQ', delay: 0 },
+            { url: 'https://i.ibb.co/hxgt8YQT/your-second-image.jpg', delay: 1 },
+            { url: 'https://i.ibb.co/7pXxq7f/foto3.jpg', delay: 2 },
+            { url: 'https://i.ibb.co/9yc8T1m/foto4.jpg', delay: 3 },
+            { url: 'https://i.ibb.co/b2cB97S/foto5.jpg', delay: 4 },
+            { url: 'https://i.ibb.co/GdKYpBR/foto6.jpg', delay: 5 },
+            { url: 'https://i.ibb.co/QN9t7DP/foto7.jpg', delay: 6 },
+            { url: 'https://i.ibb.co/9g9W45H/foto8.jpg', delay: 7 },
+            { url: 'https://i.ibb.co/WVSStN6/foto9.jpg', delay: 8 },
+            { url: 'https://i.ibb.co/R4j8zCk/foto10.jpg', delay: 9 }
+        ];
+
+        // Generate photos with staggered timing and better spacing
+        const photoCount = 15; // Increase number of photos
+        const photoPositions = [];
+        
+        for (let i = 0; i < photoCount; i++) {
+            const img = document.createElement('img');
+            const randomPhoto = photos[Math.floor(Math.random() * photos.length)];
+            
+            // Spread photos horizontally and stagger timing
+            const xPos = 5 + (i % 7) * 12;
+            const yOffset = -Math.random() * 50;
+            const animDuration = 25 + Math.random() * 15;
+            
+            img.src = randomPhoto.url;
+            img.className = 'floating-photo';
+            img.style.left = `${xPos}vw`;
+            img.style.top = `${yOffset}vh`;
+            img.style.animationDuration = `${animDuration}s`;
+            img.style.animationDelay = `${i * 0.5}s`;
+            img.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
+            
+            document.body.appendChild(img);
+        }
+    </script>
+
+</body>
+</html>
